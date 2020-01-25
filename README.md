@@ -1,8 +1,8 @@
 # Spawners
-[![Download](https://api.bintray.com/packages/okocraft/maven-repo/Spawners/images/download.svg) ](https://bintray.com/siroshun/maven-repo/Spawners/_latestVersion)
+[![Download](https://api.bintray.com/packages/okocraft/maven-repo/Spawners/images/download.svg) ](https://bintray.com/okocraft/maven-repo/Spawners/_latestVersion)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/okocraft/Spawners/Java%20CI)
 ![GitHub](https://img.shields.io/github/license/okocraft/Spawners)
-[![Bintray](https://img.shields.io/bintray/v/okocraft/maven-repo/Spawners?color=orange&label=Javadoc)](https://siroplugins.github.io/Spawners/)
+[![Bintray](https://img.shields.io/bintray/v/okocraft/maven-repo/Spawners?color=orange&label=Javadoc)](https://okocraft.github.io/Spawners/)
 
 
 ## Requirements
