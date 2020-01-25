@@ -1,0 +1,10 @@
+name: Spawners
+main: com.github.siroshun09.spawners.Spawners
+version: ${project.version}
+author: Siroshun09
+api-version: "1.15"
+depend:
+  - SiroLibrary
+commands:
+  spawner:
+    usage: "/spawner"

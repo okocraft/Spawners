@@ -1,0 +1,8 @@
+Spawner:
+  enabledWorlds: []
+Stack:
+  nameFormat: "&e&l%number%x &6&l%type%" # スタックされたモブの名前 (%number% - スタック数, %type% - モブ名)
+  radius: 3 # スタックする範囲(半径)
+  interval: 60 # スタックする頻度 (tick) 再起動が必要。
+  max: 20 # スタック数の最大値。-1 にすると Int の限界値
+  disabledMobType: [] # スタックしないモブタイプ
