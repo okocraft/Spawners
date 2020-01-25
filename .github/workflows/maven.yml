@@ -29,7 +29,7 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.WEBHOOK_O }}
         with:
-          args: ':new: Spawners が更新されました: https://github.com/SiroPlugins/Spawners'
+          args: ':new: Spawners が更新されました: https://github.com/okocraft/Spawners'
       - name: Send generated files to Discord (O)
         uses: sinshutu/upload-to-discord@master
         if: github.ref == 'refs/heads/master'
