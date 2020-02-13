@@ -23,6 +23,14 @@ public class Messages extends BukkitConfig {
         return instance;
     }
 
+    public void sendNotSlimeChunk(@NotNull Player player) {
+        sendMessage(player, getString("spawner.notslimechunk", "ここはスライムチャンクではありません。"));
+    }
+
+    public void sendSlimeChunk(@NotNull Player player) {
+        sendMessage(player, getString("spawner.slimechunk", "ここはスライムチャンクです。"));
+    }
+
     public void sendSpawnerON(@NotNull Player player) {
         sendMessage(player, getString("spawner.on", "赤石信号が入力されていないため、湧き条件を満たすと Mob がスポーンします。"));
     }
