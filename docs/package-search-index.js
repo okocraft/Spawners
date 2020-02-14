@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"com.github.siroshun09.spawners"},{"l":"com.github.siroshun09.spawners.events"},{"l":"com.github.siroshun09.spawners.listeners"},{"l":"com.github.siroshun09.spawners.stack"},{"l":"すべてのパッケージ","url":"allpackages-index.html"}]
+packageSearchIndex = [{"l":"net.okocraft.spawners"},{"l":"net.okocraft.spawners.events"},{"l":"net.okocraft.spawners.listeners"},{"l":"net.okocraft.spawners.stack"},{"l":"すべてのパッケージ","url":"allpackages-index.html"}]
