@@ -23,8 +23,8 @@ Javadoc は上のバッジから閲覧できます。
 ```
 ```xml
         <dependency>
-            <groupId>net.okocraft</groupId>
-            <artifactId>spawners</artifactId>
+            <groupId>net.okocraft.spawners</groupId>
+            <artifactId>Spawners</artifactId>
             <version>VERSION</version>
             <scope>provided</scope>
         </dependency>
