@@ -49,7 +49,7 @@ public class SpawnerListener implements Listener {
         }
 
         Optional<EntityType> type = getEntityTypeFromLore(spawner);
-        if (type.isEmpty() || type.get().equals(EntityType.SLIME)) {
+        if (type.isEmpty() || !type.get().equals(EntityType.SLIME)) {
             return;
         }
 
