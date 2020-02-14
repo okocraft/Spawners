@@ -11,17 +11,14 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 public class EntityListener implements Listener {
-    private static EntityListener instance;
+    private final static EntityListener INSTANCE = new EntityListener();
 
     private EntityListener() {
-        instance = this;
     }
 
+    @NotNull
     public static EntityListener get() {
-        if (instance == null) {
-            new EntityListener();
-        }
-        return instance;
+        return INSTANCE;
     }
 
     @EventHandler

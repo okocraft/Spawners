@@ -13,21 +13,18 @@ import java.util.List;
 import java.util.Set;
 
 public class Configuration extends BukkitConfig {
-    private static Configuration instance;
+    private final static Configuration INSTANCE = new Configuration();
 
     private final Set<EntityType> disabledMobs = new HashSet<>();
 
     private Configuration() {
         super(Spawners.get(), "config.yml", true);
-        instance = this;
         setDisabledMobs();
     }
 
+    @NotNull
     public static Configuration get() {
-        if (instance == null) {
-            new Configuration();
-        }
-        return instance;
+        return INSTANCE;
     }
 
     public String getStackedMobName(int amount, @NotNull EntityType type) {

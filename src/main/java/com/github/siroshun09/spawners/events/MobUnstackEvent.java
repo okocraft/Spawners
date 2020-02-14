@@ -13,7 +13,6 @@ public class MobUnstackEvent extends EntityEvent implements Cancellable {
     private int amount;
     private boolean isCancelled;
 
-
     public MobUnstackEvent(@NotNull Mob target, int amount) {
         super(target);
         this.target = target;

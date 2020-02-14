@@ -1,6 +1,6 @@
 package com.github.siroshun09.spawners;
 
-import org.bukkit.Bukkit;
+import com.github.siroshun09.sirolibrary.bukkitutils.BukkitUtil;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
 
@@ -11,14 +11,10 @@ public final class Permissions {
     public final static Permission STACKKILL = new Permission("spawners.stackkill", PermissionDefault.OP);
 
     static {
-        if (Bukkit.getPluginManager().getPermission("spawners.reload") == null)
-            Bukkit.getPluginManager().addPermission(RELOAD);
-        if (Bukkit.getPluginManager().getPermission("spawners.killall") == null)
-            Bukkit.getPluginManager().addPermission(KILLALL);
-        if (Bukkit.getPluginManager().getPermission("spawners.get") == null)
-            Bukkit.getPluginManager().addPermission(GET);
-        if (Bukkit.getPluginManager().getPermission("spawners.stackkill") == null)
-            Bukkit.getPluginManager().addPermission(STACKKILL);
+        if (!BukkitUtil.existPermission("spawners.reload")) BukkitUtil.addPermission(RELOAD);
+        if (!BukkitUtil.existPermission("spawners.killall")) BukkitUtil.addPermission(KILLALL);
+        if (!BukkitUtil.existPermission("spawners.get")) BukkitUtil.addPermission(GET);
+        if (!BukkitUtil.existPermission("spawners.stackkill")) BukkitUtil.addPermission(STACKKILL);
     }
 
 }

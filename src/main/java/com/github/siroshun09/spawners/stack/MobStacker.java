@@ -14,7 +14,7 @@ import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
 public class MobStacker {
-    private static MobStacker instance;
+    private final static MobStacker INSTANCE = new MobStacker();
 
     private final NamespacedKey stackKey = new NamespacedKey(Spawners.get(), "stacked_amount");
     private final NamespacedKey fromSpawnerkey = new NamespacedKey(Spawners.get(), "from_spawner");
@@ -23,8 +23,6 @@ public class MobStacker {
     private FixedMetadataValue mcMMOMetaValue;
 
     private MobStacker() {
-        instance = this;
-
         Plugin mcMMO = Bukkit.getPluginManager().getPlugin("mcMMO");
         if (mcMMO != null) {
             mcMMOMetaKey = "mcMMO: Spawned Entity";
@@ -35,11 +33,9 @@ public class MobStacker {
         BukkitUtil.runTimer(Spawners.get(), new CheckTask(), 20, Configuration.get().getStackInterval());
     }
 
+    @NotNull
     public static MobStacker get() {
-        if (instance == null) {
-            new MobStacker();
-        }
-        return instance;
+        return INSTANCE;
     }
 
     public void stack(@NotNull Mob target, @NotNull Mob mob) {

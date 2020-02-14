@@ -9,19 +9,16 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class StackKill {
-    private static StackKill instance;
+    private final static StackKill INSTANCE = new StackKill();
 
     private final Set<Player> enabled = new HashSet<>();
 
     private StackKill() {
-        instance = this;
     }
 
+    @NotNull
     public static StackKill get() {
-        if (instance == null) {
-            new StackKill();
-        }
-        return instance;
+        return INSTANCE;
     }
 
     public boolean isEnabled(@NotNull Player player) {

@@ -14,7 +14,6 @@ public class MobStackEvent extends EntityEvent implements Cancellable {
     private int amount;
     private boolean isCancelled;
 
-
     public MobStackEvent(@NotNull Mob target, @NotNull Mob stacked, int amount) {
         super(target);
         this.target = target;

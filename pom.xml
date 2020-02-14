@@ -6,7 +6,7 @@
 
     <groupId>com.github.siroshun09</groupId>
     <artifactId>spawners</artifactId>
-    <version>1.0</version>
+    <version>2.0</version>
 
     <name>Spawners</name>
     <url>https://github.com/okocraft/Spawners</url>
@@ -60,7 +60,7 @@
         <dependency>
             <groupId>com.github.siroshun09</groupId>
             <artifactId>sirolibrary</artifactId>
-            <version>1.4.6</version>
+            <version>1.4.7</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

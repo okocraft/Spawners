@@ -28,19 +28,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class CommandListener implements CommandExecutor, TabCompleter {
-    private static CommandListener instance;
+    private final static CommandListener INSTANCE = new CommandListener();
     private final List<String> subCommands = Arrays.asList("killall", "stackkill", "get", "reload");
     private final List<String> mobTypeList = Arrays.stream(EntityType.values()).filter(EntityType::isSpawnable).map(EntityType::name).collect(Collectors.toList());
 
     private CommandListener() {
-        instance = this;
     }
 
+    @NotNull
     public static CommandListener get() {
-        if (instance == null) {
-            new CommandListener();
-        }
-        return instance;
+        return INSTANCE;
     }
 
     @Override
