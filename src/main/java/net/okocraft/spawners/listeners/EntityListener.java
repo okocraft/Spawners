@@ -1,8 +1,8 @@
-package com.github.siroshun09.spawners.listeners;
+package net.okocraft.spawners.listeners;
 
-import com.github.siroshun09.spawners.Configuration;
-import com.github.siroshun09.spawners.stack.MobStacker;
-import com.github.siroshun09.spawners.stack.StackKill;
+import net.okocraft.spawners.Configuration;
+import net.okocraft.spawners.stack.MobStacker;
+import net.okocraft.spawners.stack.StackKill;
 import org.bukkit.entity.Mob;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

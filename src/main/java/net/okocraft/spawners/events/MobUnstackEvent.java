@@ -1,4 +1,4 @@
-package com.github.siroshun09.spawners.events;
+package net.okocraft.spawners.events;
 
 import org.bukkit.entity.Mob;
 import org.bukkit.event.Cancellable;
@@ -6,20 +6,18 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.event.entity.EntityEvent;
 import org.jetbrains.annotations.NotNull;
 
-public class MobStackEvent extends EntityEvent implements Cancellable {
+public class MobUnstackEvent extends EntityEvent implements Cancellable {
     private static final HandlerList handlerList = new HandlerList();
 
     private final Mob target;
-    private final Mob stacked;
     private int amount;
     private boolean isCancelled;
 
 
-    public MobStackEvent(@NotNull Mob target, @NotNull Mob stacked, int amount) {
+    public MobUnstackEvent(@NotNull Mob target, int amount) {
         super(target);
         this.target = target;
         this.amount = amount;
-        this.stacked = stacked;
         isCancelled = false;
     }
 
@@ -30,10 +28,6 @@ public class MobStackEvent extends EntityEvent implements Cancellable {
 
     public Mob getTarget() {
         return target;
-    }
-
-    public Mob getStacked() {
-        return stacked;
     }
 
     public int getAmount() {

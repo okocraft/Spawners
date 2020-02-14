@@ -1,11 +1,11 @@
-package com.github.siroshun09.spawners.listeners;
+package net.okocraft.spawners.listeners;
 
 import com.github.siroshun09.sirolibrary.bukkitutils.ItemUtil;
-import com.github.siroshun09.spawners.Configuration;
-import com.github.siroshun09.spawners.Messages;
-import com.github.siroshun09.spawners.Permissions;
-import com.github.siroshun09.spawners.stack.MobStacker;
-import com.github.siroshun09.spawners.stack.StackKill;
+import net.okocraft.spawners.Configuration;
+import net.okocraft.spawners.Messages;
+import net.okocraft.spawners.Permissions;
+import net.okocraft.spawners.stack.MobStacker;
+import net.okocraft.spawners.stack.StackKill;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.World;

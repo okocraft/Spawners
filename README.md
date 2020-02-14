@@ -23,7 +23,7 @@ Javadoc は上のバッジから閲覧できます。
 ```
 ```xml
         <dependency>
-            <groupId>com.github.siroshun09</groupId>
+            <groupId>net.okocraft</groupId>
             <artifactId>spawners</artifactId>
             <version>VERSION</version>
             <scope>provided</scope>
