@@ -39,8 +39,12 @@ public class SpawnerListener implements Listener {
         return INSTANCE;
     }
 
-    @EventHandler(priority = EventPriority.HIGHEST)
+    @EventHandler(priority = EventPriority.MONITOR)
     public void onSlimeSpawnerHold(@NotNull PlayerItemHeldEvent e) {
+        if (e.isCancelled()) {
+            return;
+        }
+
         Player player = e.getPlayer();
 
         ItemStack spawner = player.getInventory().getItem(e.getNewSlot());
@@ -62,6 +66,10 @@ public class SpawnerListener implements Listener {
 
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPlace(@NotNull BlockPlaceEvent e) {
+        if (e.isCancelled()) {
+            return;
+        }
+
         if (!e.getBlockPlaced().getType().equals(Material.SPAWNER)) {
             return;
         }
@@ -89,6 +97,10 @@ public class SpawnerListener implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onSpawn(@NotNull SpawnerSpawnEvent e) {
+        if (e.isCancelled()) {
+            return;
+        }
+
         if (!Configuration.get().isEnabledWorld(e.getEntity().getWorld())) {
             e.setCancelled(true);
             return;
