@@ -3,6 +3,7 @@ package com.github.siroshun09.spawners.listeners;
 import com.github.siroshun09.sirolibrary.bukkitutils.BukkitUtil;
 import com.github.siroshun09.spawners.Configuration;
 import com.github.siroshun09.spawners.Messages;
+import com.github.siroshun09.spawners.Spawners;
 import com.github.siroshun09.spawners.events.SpawnerPlaceEvent;
 import com.github.siroshun09.spawners.stack.MobStacker;
 import org.bukkit.ChatColor;
@@ -25,49 +26,34 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Optional;
+
 public class SpawnerListener implements Listener {
-    private static SpawnerListener instance;
+    private final static SpawnerListener INSTANCE = new SpawnerListener();
 
     private SpawnerListener() {
-        instance = this;
     }
 
+    @NotNull
     public static SpawnerListener get() {
-        if (instance == null) {
-            new SpawnerListener();
-        }
-        return instance;
+        return INSTANCE;
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
-    public void onSlimeSpawnerHold(@NotNull PlayerItemHeldEvent event) {
-        Player player = event.getPlayer();
-        ItemStack spawner = player.getInventory().getItem(event.getNewSlot());
-        if (spawner == null || spawner.getType() != Material.SPAWNER) {
+    public void onSlimeSpawnerHold(@NotNull PlayerItemHeldEvent e) {
+        Player player = e.getPlayer();
+
+        ItemStack spawner = player.getInventory().getItem(e.getNewSlot());
+        if (spawner == null || spawner.getType().equals(Material.SPAWNER)) {
             return;
         }
 
-        ItemMeta spawnerMeta = spawner.getItemMeta();
-        if (spawnerMeta == null) {
+        Optional<EntityType> type = getEntityTypeFromLore(spawner);
+        if (type.isEmpty() || type.get().equals(EntityType.SLIME)) {
             return;
         }
 
-        if (spawnerMeta.getLore() == null || spawnerMeta.getLore().size() < 1) {
-            return;
-        }
-
-        EntityType type;
-        try {
-            type = EntityType.valueOf(ChatColor.stripColor(spawnerMeta.getLore().get(0).toUpperCase()));
-        } catch (IllegalArgumentException ex) {
-            return;
-        }
-
-        if (type != EntityType.SLIME) {
-            return;
-        }
-        
-        if (player.getLocation().getChunk().isSlimeChunk()) {
+        if (player.getWorld().getChunkAt(player.getLocation()).isSlimeChunk()) {
             Messages.get().sendSlimeChunk(player);
         } else {
             Messages.get().sendNotSlimeChunk(player);
@@ -76,40 +62,27 @@ public class SpawnerListener implements Listener {
 
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPlace(@NotNull BlockPlaceEvent e) {
-
         if (!e.getBlockPlaced().getType().equals(Material.SPAWNER)) {
             return;
         }
 
         ItemStack itemInHand = e.getItemInHand();
-
         if (!itemInHand.getType().equals(Material.SPAWNER)) {
             return;
         }
 
-        ItemMeta spawnerMeta = itemInHand.getItemMeta();
-        if (spawnerMeta == null) {
-            return;
-        }
-
-        if (spawnerMeta.getLore() == null || spawnerMeta.getLore().size() < 1) {
-            return;
-        }
-
-        EntityType type;
-        try {
-            type = EntityType.valueOf(ChatColor.stripColor(spawnerMeta.getLore().get(0).toUpperCase()));
-        } catch (IllegalArgumentException ex) {
+        Optional<EntityType> type = getEntityTypeFromLore(itemInHand);
+        if (type.isEmpty()) {
             return;
         }
 
         CreatureSpawner spawner = (CreatureSpawner) e.getBlockPlaced().getState();
-        spawner.setSpawnedType(type);
+        spawner.setSpawnedType(type.get());
         spawner.update();
 
         BukkitUtil.callEvent(new SpawnerPlaceEvent(e.getPlayer(), spawner));
 
-        Messages.get().sendPlaced(e.getPlayer(), type);
+        Messages.get().sendPlaced(e.getPlayer(), type.get());
         Messages.get().sendSpawnerTips(e.getPlayer());
     }
 
@@ -127,7 +100,6 @@ public class SpawnerListener implements Listener {
         }
 
         if (e.getEntity() instanceof Mob) {
-
             MobStacker.get().setFromSpawner((Mob) e.getEntity());
         }
     }
@@ -147,7 +119,6 @@ public class SpawnerListener implements Listener {
         }
 
         ItemStack item = e.getItem();
-
         if (item == null) {
             return;
         }
@@ -175,6 +146,26 @@ public class SpawnerListener implements Listener {
             Messages.get().sendSpawnerOFF(e.getPlayer());
         } else {
             Messages.get().sendSpawnerON(e.getPlayer());
+        }
+    }
+
+    @NotNull
+    private Optional<EntityType> getEntityTypeFromLore(@NotNull ItemStack item) {
+        ItemMeta meta = item.getItemMeta();
+        if (meta == null) {
+            return Optional.empty();
+        }
+
+        if (meta.getLore() == null || meta.getLore().size() < 1) {
+            return Optional.empty();
+        }
+
+        String lore1 = ChatColor.stripColor(meta.getLore().get(0).toUpperCase());
+        try {
+            return Optional.of(EntityType.valueOf(lore1));
+        } catch (IllegalArgumentException ex) {
+            Spawners.get().getLogger().warning("不明なエンティティ名: " + lore1);
+            return Optional.empty();
         }
     }
 }
