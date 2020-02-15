@@ -4,8 +4,8 @@ spawner:
   tip: "TIPS: 赤石信号で湧き止めできます。"
   on: "赤石信号が入力されていないため、湧き条件を満たすと Mob がスポーンします。"
   off: "赤石信号が入力されているため、スポーンが停止しています。"
-  slimechunk: "ここはスライムチャンクです。"
-  notslimechunk: "ここはスライムチャンクではありません。"
+  slimechunk: "このチャンクでは Y=40 以下でスライムが湧きます。"
+  notslimechunk: "このチャンクではスライムは湧きません。"
 command:
   reload: "設定ファイルを再読込しました。"
   killall: "&b%amount%体 &7の Mob を削除しました。"

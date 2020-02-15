@@ -21,11 +21,11 @@ public class Messages extends BukkitConfig {
     }
 
     public void sendSlimeChunk(@NotNull Player player) {
-        sendMessage(player, getString("spawner.slimechunk", "ここはスライムチャンクです。"));
+        sendMessage(player, getString("spawner.slimechunk", "このチャンクでは Y=40 以下でスライムが湧きます。"));
     }
 
     public void sendNotSlimeChunk(@NotNull Player player) {
-        sendMessage(player, getString("spawner.notslimechunk", "ここはスライムチャンクではありません。"));
+        sendMessage(player, getString("spawner.notslimechunk", "このチャンクではスライムは湧きません。"));
     }
 
     public void sendSpawnerON(@NotNull Player player) {
