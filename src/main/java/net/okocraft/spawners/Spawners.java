@@ -9,15 +9,15 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Spawners extends JavaPlugin {
-    private static Spawners instance;
+    private static Spawners INSTANCE;
 
     public Spawners() {
         super();
-        instance = this;
+        INSTANCE = this;
     }
 
     public static Spawners get() {
-        return instance;
+        return INSTANCE;
     }
 
     @Override
