@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"com.github.siroshun09.spawners"},{"l":"com.github.siroshun09.spawners.events"},{"l":"com.github.siroshun09.spawners.listeners"},{"l":"com.github.siroshun09.spawners.stack"},{"l":"すべてのパッケージ","url":"allpackages-index.html"}]
