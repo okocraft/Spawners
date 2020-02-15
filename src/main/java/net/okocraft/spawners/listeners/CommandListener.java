@@ -108,7 +108,7 @@ public class CommandListener implements CommandExecutor, TabCompleter {
         return new ArrayList<>();
     }
 
-    private void killAll(CommandSender sender) {
+    private void killAll(@NotNull CommandSender sender) {
         int i = 0;
         for (String world : Configuration.get().getEnabledWorlds()) {
             World w = Bukkit.getWorld(world);
@@ -126,10 +126,10 @@ public class CommandListener implements CommandExecutor, TabCompleter {
         Messages.get().sendKilledAll(sender, i);
     }
 
-    private void giveSpawner(Player player, String type) {
+    private void giveSpawner(@NotNull Player player, @NotNull String type) {
         EntityType entityType;
         try {
-            entityType = EntityType.valueOf(type);
+            entityType = EntityType.valueOf(type.toUpperCase());
         } catch (IllegalArgumentException e) {
             Messages.get().sendInvalidType(player, type);
             return;
@@ -139,6 +139,8 @@ public class CommandListener implements CommandExecutor, TabCompleter {
         if (spawner.getItemMeta() == null) {
             return;
         }
+
+        spawner.setItemMeta(ItemUtil.setName(spawner.getItemMeta(), "&f" + entityType.name() + " のスポナー"));
         spawner.setItemMeta(ItemUtil.setLore(spawner.getItemMeta(), "&e" + entityType.name()));
 
         if (player.getInventory().addItem(spawner).isEmpty()) {
