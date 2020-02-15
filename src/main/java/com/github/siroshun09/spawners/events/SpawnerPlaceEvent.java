@@ -6,6 +6,9 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.event.player.PlayerEvent;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * スポナーが設置された際に発火されるイベント。
+ */
 public class SpawnerPlaceEvent extends PlayerEvent {
     private static final HandlerList handlerList = new HandlerList();
 
@@ -21,13 +24,18 @@ public class SpawnerPlaceEvent extends PlayerEvent {
         return handlerList;
     }
 
-    public CreatureSpawner getSpawner() {
-        return spawner;
-    }
-
     @Override
     @NotNull
     public HandlerList getHandlers() {
         return handlerList;
+    }
+
+    /**
+     * 設置されたスポナーを返す。
+     *
+     * @return 設置されたスポナー
+     */
+    public CreatureSpawner getSpawner() {
+        return spawner;
     }
 }
