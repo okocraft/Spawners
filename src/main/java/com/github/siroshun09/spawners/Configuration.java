@@ -45,7 +45,6 @@ public class Configuration extends BukkitConfig {
         return getLong("Stack.interval", 60);
     }
 
-
     @NotNull
     public List<String> getEnabledWorlds() {
         return new ArrayList<>(getStringList("Spawner.enabledWorlds"));

@@ -30,7 +30,6 @@ public class Spawners extends JavaPlugin {
     @Override
     public void onEnable() {
         super.onEnable();
-
         MobStacker.get();
         BukkitUtil.registerEvents(EntityListener.get(), this);
         BukkitUtil.registerEvents(SpawnerListener.get(), this);
@@ -40,7 +39,6 @@ public class Spawners extends JavaPlugin {
     @Override
     public void onDisable() {
         super.onDisable();
-
         BukkitUtil.unregisterEvents(this);
         Bukkit.getScheduler().cancelTasks(this);
     }

@@ -16,5 +16,4 @@ public final class Permissions {
         if (!BukkitUtil.existPermission("spawners.get")) BukkitUtil.addPermission(GET);
         if (!BukkitUtil.existPermission("spawners.stackkill")) BukkitUtil.addPermission(STACKKILL);
     }
-
 }
