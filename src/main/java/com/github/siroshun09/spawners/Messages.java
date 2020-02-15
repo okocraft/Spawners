@@ -9,18 +9,15 @@ import org.bukkit.permissions.Permission;
 import org.jetbrains.annotations.NotNull;
 
 public class Messages extends BukkitConfig {
-    private static Messages instance;
+    private final static Messages INSTANCE = new Messages();
 
     private Messages() {
         super(Spawners.get(), "messages.yml", true);
-        instance = this;
     }
 
+    @NotNull
     public static Messages get() {
-        if (instance == null) {
-            new Messages();
-        }
-        return instance;
+        return INSTANCE;
     }
 
     public void sendSlimeChunk(@NotNull Player player) {
