@@ -48,7 +48,7 @@ public class SpawnerListener implements Listener {
         Player player = e.getPlayer();
 
         ItemStack spawner = player.getInventory().getItem(e.getNewSlot());
-        if (spawner == null || spawner.getType().equals(Material.SPAWNER)) {
+        if (spawner == null || !spawner.getType().equals(Material.SPAWNER)) {
             return;
         }
 
