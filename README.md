@@ -9,7 +9,7 @@
 
 - Java 11+
 - Spigot (Minecraft Version 1.15+)
-- [SiroLibrary](https://github.com/SiroPlugins/SiroLibrary) 1.4.6+
+- [SiroLibrary](https://github.com/SiroPlugins/SiroLibrary) 1.4.7+
 
 ## Usage (Maven)
 
@@ -23,7 +23,7 @@ Javadoc は上のバッジから閲覧できます。
 ```
 ```xml
         <dependency>
-            <groupId>com.github.siroshun09</groupId>
+            <groupId>net.okocraft.spawners</groupId>
             <artifactId>spawners</artifactId>
             <version>VERSION</version>
             <scope>provided</scope>

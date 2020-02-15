@@ -1,6 +1,5 @@
-package com.github.siroshun09.spawners.stack;
+package net.okocraft.spawners;
 
-import com.github.siroshun09.spawners.Configuration;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.entity.Ageable;

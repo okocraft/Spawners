@@ -1,5 +1,5 @@
 name: Spawners
-main: com.github.siroshun09.spawners.Spawners
+main: net.okocraft.spawners.Spawners
 version: ${project.version}
 author: Siroshun09
 api-version: "1.15"

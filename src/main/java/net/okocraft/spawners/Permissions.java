@@ -1,4 +1,4 @@
-package com.github.siroshun09.spawners;
+package net.okocraft.spawners;
 
 import com.github.siroshun09.sirolibrary.bukkitutils.BukkitUtil;
 import org.bukkit.permissions.Permission;

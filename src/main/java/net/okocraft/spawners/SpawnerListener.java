@@ -1,11 +1,6 @@
-package com.github.siroshun09.spawners.listeners;
+package net.okocraft.spawners;
 
 import com.github.siroshun09.sirolibrary.bukkitutils.BukkitUtil;
-import com.github.siroshun09.spawners.Configuration;
-import com.github.siroshun09.spawners.Messages;
-import com.github.siroshun09.spawners.Spawners;
-import com.github.siroshun09.spawners.events.SpawnerPlaceEvent;
-import com.github.siroshun09.spawners.stack.MobStacker;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Material;

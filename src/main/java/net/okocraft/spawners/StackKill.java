@@ -1,7 +1,6 @@
-package com.github.siroshun09.spawners.stack;
+package net.okocraft.spawners;
 
 import com.github.siroshun09.sirolibrary.message.BukkitMessage;
-import com.github.siroshun09.spawners.Messages;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
