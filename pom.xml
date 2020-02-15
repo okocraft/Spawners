@@ -6,7 +6,7 @@
 
     <groupId>net.okocraft.spawners</groupId>
     <artifactId>spawners</artifactId>
-    <version>2.0</version>
+    <version>2.1</version>
 
     <name>Spawners</name>
     <url>https://github.com/okocraft/Spawners</url>
@@ -118,7 +118,6 @@
                     <bottom>
                         <![CDATA[<p class="legalCopy">Copyright &#169; 2019-2020 <a href="https://github.com/Siroshun09">Siroshun09</a>. All rights reserved.</p>]]></bottom>
                     <links>
-                        <link>https://commons.apache.org/proper/commons-lang/javadocs/api-3.9/</link>
                         <link>https://hub.spigotmc.org/javadocs/spigot/</link>
                         <link>https://javadoc.io/doc/org.jetbrains/annotations/18.0.0/</link>
                         <link>https://siroplugins.github.io/SiroLibrary/</link>
