@@ -1,6 +1,10 @@
-package net.okocraft.spawners;
+package net.okocraft.spawners.stack;
 
 import com.github.siroshun09.sirolibrary.bukkitutils.BukkitUtil;
+import net.okocraft.spawners.Configuration;
+import net.okocraft.spawners.Spawners;
+import net.okocraft.spawners.events.MobStackEvent;
+import net.okocraft.spawners.events.MobUnstackEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Mob;

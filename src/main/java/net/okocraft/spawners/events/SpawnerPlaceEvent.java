@@ -1,4 +1,4 @@
-package net.okocraft.spawners;
+package net.okocraft.spawners.events;
 
 import org.bukkit.block.CreatureSpawner;
 import org.bukkit.entity.Player;

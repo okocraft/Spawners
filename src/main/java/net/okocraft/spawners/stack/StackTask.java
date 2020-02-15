@@ -1,5 +1,6 @@
-package net.okocraft.spawners;
+package net.okocraft.spawners.stack;
 
+import net.okocraft.spawners.Configuration;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.entity.Ageable;
